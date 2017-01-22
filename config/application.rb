@@ -24,6 +24,6 @@ module Demoapp
     
     Mongoid.load!('./config/mongoid.yml')
     config.generators {|g| g.orm :active_record}
-    config.active_record.raise_in_transactional_callbacks = true
+    #config.active_record.raise_in_transactional_callbacks = true
   end
 end
