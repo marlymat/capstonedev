@@ -12,11 +12,10 @@ class BarsController < ApplicationController
   def create
     @bar = Bar.new(bar_params)
 
-      if @bar.save
+    if @bar.save
         render :show, status: :created, location: @bar 
-      else
+    else
         render json: @bar.errors, status: :unprocessable_entity
-      end
     end
   end
 
@@ -26,9 +25,8 @@ class BarsController < ApplicationController
 
     if @bar.update(bar_params)
         head :no_content
-      else
+    else
         render json: @bar.errors, status: :unprocessable_entity
-      end
     end
   end
 

@@ -26,6 +26,7 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'rack-cors', '~>0.4', '>=0.4.0', :require => 'rack/cors'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -37,13 +38,18 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'byebug', '~> 9.0', '>=9.0.6'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'httparty', '~>0.14', '>=0.14.0'
   gem 'rspec-rails', '~> 3.5', '>=3.5.2'
+end
+
+group :production do
+  gem 'rails_12factor', '~>0.0', '>= 0.0.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
